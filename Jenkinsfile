@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '/var/jenkins_home/tools/io.jenkins.plugins.dotnet.DotNetSDK/.NET/dotnet build Globomantics.Intranet.Web'
+                sh '/var/jenkins_home/tools/io.jenkins.plugins.dotnet.DotNetSDK/.NET/dotnet build Globomantics.Intranet.Web --no-restore'
             }
         }
         stage('Test') {
             steps {
-                sh '/var/jenkins_home/tools/io.jenkins.plugins.dotnet.DotNetSDK/.NET/dotnet test Globomantics.Intranet.Web'
+                sh '/var/jenkins_home/tools/io.jenkins.plugins.dotnet.DotNetSDK/.NET/dotnet test Globomantics.Intranet.Web --no-restore'
             }
         }
     }
